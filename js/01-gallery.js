@@ -37,8 +37,11 @@ gallery.addEventListener("click", (onClick) => {
 `);
 
   instance.show();
-
-  gallery.addEventListener("keydown", (e) => {
+// instance
+// .el
+// .querySelector('img')
+// .addEventListener('click', instance.close);
+ const escapebtn = gallery.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       instance.close();
     }
