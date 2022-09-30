@@ -5,7 +5,7 @@ const store ={lightbox : null}
 const markup = galleryItems.reduce(
   (acc, {preview, original, description}) =>
   acc +
-  `<div class=""gallery__item">
+  `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
     class = "gallery__image"
@@ -23,10 +23,11 @@ galleryDiv.insertAdjacentHTML("beforeend", markup);
 galleryDiv.addEventListener("click", onGalleryClick);
 
 function onGalleryClick(evt){
+  console.log(evt)
   evt.preventDefault();
   const galleryItem = evt.target.closest('.gallery__item');
   if(!galleryItem) return;
-
+  
   const img = galleryItem.querySelector('.gallery__image')
   const src = img.dataset.source;
   showModal(src);
@@ -47,13 +48,13 @@ function getBigImgTemplate(src){
 }
 
 window.addEventListener("keydown", onKeyDown);
-
 function onKeyDown(evt){
   if(evt.key !== "Escape") return;
   if (store.lightbox && store.lightbox.close){
     instance.close();
   }
 }
+
 // import { galleryItems } from "./gallery-items.js";
 // // Change code below this line
 
