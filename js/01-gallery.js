@@ -51,7 +51,7 @@ window.addEventListener("keydown", onKeyDown);
 function onKeyDown(evt){
   if(evt.key !== "Escape") return;
   if (store.lightbox && store.lightbox.close){
-    instance.close();
+    store.lightbox.close();
   }
 }
 
